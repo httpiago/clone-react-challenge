@@ -1,4 +1,4 @@
-Sim, outro projeto que tenta recriar a API do [ReactJS](https://reactjs.org) ⚛.
+Sim, outro projeto que tenta recriar a API do [ReactJS](https://reactjs.org).
 
  **Por quê?**
 
@@ -12,7 +12,7 @@ Bom, eu acho o React muito legal e estava sem o que fazer 😄.
 git clone https://github.com/httpiago/react-clone-challenge.git
 cd clone-react-challenge
 yarn install
-yarn start
+yarn run start
 ```
 
 ## Cobertura da API
@@ -30,9 +30,8 @@ yarn start
 | Estados.                                  | ✔️ (com gambiarra) | - |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | - |
-| Portais.                                  | ❌ | - |
 | Criar referência a um elemento.           | ❌ | - |
-| Tratar erros durante a renderização.      | ❌ | - |
+| Tratar erros durante a renderização.      | ️️️️✔️ | - |
 | .renderToString(...)                      | ✔️ | - |
 
 ## Inspirações

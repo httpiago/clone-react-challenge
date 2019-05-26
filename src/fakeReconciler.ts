@@ -1,4 +1,4 @@
-import { mountElement } from './dom'
+import { mountElement, createElement } from './dom'
 
 let memorization = {
   rootDOMElement: null,
@@ -23,7 +23,7 @@ export function render(reactElement: JSX.Element, rootDOMElement: HTMLElement) {
 export function renderToString(reactElement: JSX.Element): string {
   const mountedTree = mountElement(reactElement)
 
-  return mountElement.outerHTML
+  return mountedTree.outerHTML
 }
 
 /**
@@ -35,10 +35,10 @@ export function forceUpdate() {
 
   try {
     mountedTree = mountElement(lastReactTree)
-  } catch(err) {
-    console.log('Ocorreu um erro ao renderizar um componente:', err)
-    console.trace()
-    return;
+  }
+  catch(err) {
+    console.log('Ocorreu um erro ao renderizar um componente.', err)
+    mountedTree = mountElement( createElement('span', { style: "color: red" }, 'Ocorreu um erro ao renderizar componente. Veja mais no console.') )
   }
 
   if (!rootDOMElement.lastChild) {

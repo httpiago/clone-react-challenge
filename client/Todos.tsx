@@ -1,8 +1,9 @@
 import * as React from '../src/index'
+import faker from 'faker'
 
 let state = {
   todos: [
-    { id: 0, text: 'initial todo' }
+    { id: 0, text: faker.lorem.words(5) }
   ]
 }
 
@@ -16,7 +17,7 @@ export default function Todos(props: Props) {
   const handleAdd = () => {
     state.todos.push({
       id: Date.now(),
-      text: 'New todo'
+      text: faker.lorem.words(5)
     })
     React.forceUpdate()
   }
@@ -31,7 +32,7 @@ export default function Todos(props: Props) {
       <ul>
         {state.todos.length !== 0 ? (
           state.todos.map(({ id, text }) => (
-            <li onClick={() => hanldeRemove(id)}>{text + ' ' + id}</li>
+            <li onClick={() => hanldeRemove(id)}>{text} (click to remove)</li>
           ))
         ) : (
           'Nenhum todo encontrado :('

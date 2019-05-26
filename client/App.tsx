@@ -8,11 +8,11 @@ React.render(
   <main className="wrapper">
     <Header showExclamation>Hello React</Header>
     <hr/>
-    <React.Fragment>
+    <>
       <Timer />
       <hr/>
       <Todos addLabel="Add new todo" />
-    </React.Fragment>
+    </>
   </main>,
   document.getElementById('root')
 )

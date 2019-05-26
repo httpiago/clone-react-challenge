@@ -21,7 +21,7 @@ export function mountElement(element: JSX.Element): HTMLElement {
     node = document.createTextNode(String(element))
   }
   // Permitir fragmentos
-  else if (typeof element.type !== 'undefined' && element.type === 'fragment') {
+  else if (typeof element.type === 'function' && element.type.name === 'Fragment') {
     node = document.createDocumentFragment()
     renderChildren(node, element.children)
   }
