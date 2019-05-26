@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "lib": ["esnext", "dom"],
+    "jsx": "react",
+    "jsxFactory": "React.createElement"
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", "client"]
+}

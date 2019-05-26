@@ -1,0 +1,12 @@
+{
+  "author": "Iago Bruno (https://www.iagobruno.com/)",
+  "repository": "https://github.com/httpiago/react-clone-challenge.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel client/index.html"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.4.5"
+  }
+}
