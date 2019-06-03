@@ -1,41 +1,26 @@
 import * as React from '../src/index'
-import faker from 'faker'
 
 type Props = {
+  todos: Array<{ [index: string]: any }>
   addLabel?: string,
+  handleAdd: () => void,
+  handleDelete: (id: number) => void,
   children?: JSX.Element
 }
 
-export default function Todos(props: Props) {
-  const [todos, setTodos] = React.useState('todos', [ { id: 0, text: faker.lorem.words(5) } ])
-
-  function handleAdd() {
-    const newTodo = {
-      id: Date.now(),
-      text: faker.lorem.words(5),
-    }
-
-    setTodos([ ...todos, newTodo ])
-  }
-
-  function hanldeRemove(id: number) {
-    setTodos(
-      todos.filter(item => item.id !== id)
-    )
-  }
-
+export default function Todos({ todos, handleAdd, handleDelete, addLabel }: Props) {
   return (
     <div>
       <ul>
         {todos.length !== 0 ? (
           todos.map(({ id, text }) => (
-            <li onClick={() => hanldeRemove(id)}>{text} (click to remove)</li>
+            <li onClick={() => handleDelete(id)}>{text} (click to remove)</li>
           ))
         ) : (
           'Nenhum todo encontrado :('
         )}
       </ul>
-      <button onClick={handleAdd}>{props.addLabel || 'Add todo'}</button>
+      <ion-button onClick={handleAdd}>{addLabel || 'Add todo'}</ion-button>
     </div>
   )
 }

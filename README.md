@@ -26,13 +26,13 @@ yarn run start
 | Manipular eventos.                        | ✔️ | [Implementação](/src/dom.ts#L55) |
 | Renderização condicional.                 | ✔️ | [Implementação](/src/dom.ts#L16) |
 | Renderizar listas.                        | ✔️ | [Implementação](/src/dom.ts#L69) |
+| Renderizar web components.                | ✔️ | - |
 | Componentes!                              | ✔️ | [Implementação](/src/dom.ts#L29) |
 | Estados.                                  | ✔️ | [Implementação](/src/hooks.ts#L11) |
 | Hooks!                                    | ✔️ | [Implementação](/src/hooks.ts) |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | [Implementação](/src/commonComponents.tsx#L10) |
 | Criar referência a um elemento.           | ❌ | - |
-| Web components.                           | ❌ | - |
 | Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 
