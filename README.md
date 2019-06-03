@@ -1,14 +1,14 @@
 Sim, outro projeto que tenta recriar a API do [ReactJS](https://reactjs.org).
 
- **Por quê?**
+**Por quê?**
 
 Bom, eu acho o React muito legal e estava sem o que fazer 😄.
 
->  ⚠ Sob nenhuma hipótese use isso em produção! Se o que você quer é uma versão mais leve do React, então lhe apresento meu outro amigo, o [Preact](https://github.com/preactjs/preact).
+> ⚠ Sob nenhuma hipótese use isso em produção! Se o que você quer é uma versão mais leve do React, então lhe apresento meu outro amigo, o [Preact](https://github.com/preactjs/preact).
 
 ## Instalação
 
-```
+```bash
 git clone https://github.com/httpiago/react-clone-challenge.git
 cd clone-react-challenge
 yarn install
@@ -27,10 +27,12 @@ yarn run start
 | Renderização condicional.                 | ✔️ | [Implementação](/src/dom.ts#L16) |
 | Renderizar listas.                        | ✔️ | [Implementação](/src/dom.ts#L69) |
 | Componentes!                              | ✔️ | [Implementação](/src/dom.ts#L29) |
-| Estados.                                  | ✔️ (com gambiarra) | [Implementação](/src/fakeReconciler.ts#L23) |
+| Estados.                                  | ✔️ | [Implementação](/src/hooks.ts#L11) |
+| Hooks!                                    | ✔️ | [Implementação](/src/hooks.ts) |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | [Implementação](/src/commonComponents.tsx#L10) |
 | Criar referência a um elemento.           | ❌ | - |
+| Web components.                           | ❌ | - |
 | Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 

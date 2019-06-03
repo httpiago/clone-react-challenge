@@ -1,37 +1,34 @@
 import * as React from '../src/index'
 import faker from 'faker'
 
-let state = {
-  todos: [
-    { id: 0, text: faker.lorem.words(5) }
-  ]
-}
-
 type Props = {
   addLabel?: string,
   children?: JSX.Element
 }
 
 export default function Todos(props: Props) {
+  const [todos, setTodos] = React.useState('todos', [ { id: 0, text: faker.lorem.words(5) } ])
 
-  const handleAdd = () => {
-    state.todos.push({
+  function handleAdd() {
+    const newTodo = {
       id: Date.now(),
-      text: faker.lorem.words(5)
-    })
-    React.forceUpdate()
+      text: faker.lorem.words(5),
+    }
+
+    setTodos([ ...todos, newTodo ])
   }
 
-  const hanldeRemove = (id: number) => {
-    state.todos = state.todos.filter(item => item.id !== id)
-    React.forceUpdate()
+  function hanldeRemove(id: number) {
+    setTodos(
+      todos.filter(item => item.id !== id)
+    )
   }
 
   return (
     <div>
       <ul>
-        {state.todos.length !== 0 ? (
-          state.todos.map(({ id, text }) => (
+        {todos.length !== 0 ? (
+          todos.map(({ id, text }) => (
             <li onClick={() => hanldeRemove(id)}>{text} (click to remove)</li>
           ))
         ) : (

@@ -27,8 +27,7 @@ export function mountElement(element: JSX.Element): HTMLElement {
   }
   // Montar componente de função
   else if (typeof element.type === 'function') {
-    const component = element.type({ ...element.props, children: element.children })
-    node = mountElement( component )
+    node = mountComponent(element.type, { ...element.props, children: element.children })
   }
   // Criar um novo elemento no DOM
   else if (typeof element.type === 'string') {
@@ -76,4 +75,10 @@ function renderChildren(node: HTMLElement, children: JSX.Element[]) {
       node.appendChild( mountElement(child) )
     }
   })
+}
+
+function mountComponent(Component: Function, props: object) {
+  const domNode = Component(props)
+
+  return mountElement( domNode )
 }
