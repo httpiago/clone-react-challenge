@@ -30,8 +30,10 @@ yarn run start
 | Componentes!                              | ✔️ | [Implementação](/src/dom.ts#L29) |
 | Estados.                                  | ✔️ | [Implementação](/src/hooks.ts#L11) |
 | Hooks!                                    | ✔️ | [Implementação](/src/hooks.ts) |
+| Api de contexto.                          | ❌ | - |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | [Implementação](/src/commonComponents.tsx#L10) |
+| Portais.                                  | ❌ | - |
 | Criar referência a um elemento.           | ❌ | - |
 | Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
