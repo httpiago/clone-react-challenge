@@ -19,8 +19,8 @@ yarn run start
 
 | Função                                    | Implementado? | Link |
 | ----------------------------------------- | -  | ------------- |
-| Virtual DOM.                              | ✔️ | [Implementação](/src/dom.ts#L4) |
 | Renderizar elementos no DOM usando JSX.   | ✔️ | [Implementação](/src/dom.ts#L12) |
+| Virtual DOM.                              | 🤔 | [Implementação](/src/dom.ts#L4) |
 | Atualizar a renderização no DOM.          | ✔️ | [Implementação](/src/fakeReconciler.ts#L32) |
 | Atualizar o DOM de forma eficiente.       | ❌ | - |
 | Manipular eventos.                        | ✔️ | [Implementação](/src/dom.ts#L55) |
@@ -28,14 +28,14 @@ yarn run start
 | Renderizar listas.                        | ✔️ | [Implementação](/src/dom.ts#L69) |
 | Renderizar web components.                | ✔️ | - |
 | Componentes!                              | ✔️ | [Implementação](/src/dom.ts#L29) |
-| Estados.                                  | ✔️ | [Implementação](/src/hooks.ts#L11) |
+| Estados.                                  | ✔️ | [Implementação](/src/hooks.ts#L13) |
 | Hooks!                                    | ✔️ | [Implementação](/src/hooks.ts) |
-| Api de contexto.                          | ❌ | - |
+| Contexto.                                 | ✔️ | [Implementação](/src/context.ts) |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | [Implementação](/src/commonComponents.tsx#L10) |
 | Portais.                                  | ❌ | - |
-| Criar referência a um elemento.           | ❌ | - |
-| Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
+| Criar referência a um elemento.           | ️️️️✔️ | [Implementação](/src/hooks.ts#L69) |
+| Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L39) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
 
 ## Inspirações
