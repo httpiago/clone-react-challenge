@@ -33,7 +33,7 @@ yarn run start
 | Contexto.                                 | ✔️ | [Implementação](/src/context.ts) |
 | Métodos de ciclo de vida.                 | ❌ | - |
 | Fragmentos (<React.Fragment>).            | ✔️ | [Implementação](/src/commonComponents.tsx#L10) |
-| Portais.                                  | ❌ | - |
+| Portais.                                  | ✔️ | [Implementação](/src/commonComponents.tsx#L24) |
 | Criar referência a um elemento.           | ️️️️✔️ | [Implementação](/src/hooks.ts#L69) |
 | Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L39) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
