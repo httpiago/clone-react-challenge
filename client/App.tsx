@@ -1,47 +1,31 @@
 import * as React from '../src/index'
-import faker from 'faker'
+import { reducer, AppState } from './reducer'
 
 import Header from './Header'
-import Todos from './Todos';
-import Counter from './Counter';
+import Todos from './Todos'
+import Counter from './Counter'
 
-function App({}) {
-  const [state, setState] = React.useState('global', { todos: [ { id: 0, text: faker.lorem.words(5) } ] })
+type GlobalContextType = {
+  state: AppState,
+  dispatch: React.Dispatch
+}
+export const GlobalContext = React.createContext<GlobalContextType>()
 
-  function handleAdd() {
-    const newTodo = {
-      id: Date.now(),
-      text: faker.lorem.words(5),
-    }
-
-    setState({
-      ...state,
-      todos: [ ...state.todos, newTodo ]
-    })
-  }
-
-  function handleDelete(id: number) {
-    setState({
-      ...state,
-      todos: state.todos.filter(item => item.id !== id)
-    })
-  }
+function App(props) {
+  const [state, dispatch] = React.useReducer<AppState>('global-state', reducer)
 
   return (
-    <main className="wrapper">
-      <Header showExclamation>Hello React</Header>
-      <hr/>
-      <>
-        <Counter number={state.todos.length} />
+    <GlobalContext.Provider value={{ state, dispatch }}>
+      <main className="wrapper">
+        <Header repeatExclamation={3}>Hello React</Header>
         <hr/>
-        <Todos
-          todos={state.todos}
-          addLabel="Add new todo"
-          handleAdd={handleAdd}
-          handleDelete={handleDelete}
-        />
-      </>
-    </main>
+        <>
+          <Counter />
+          <hr/>
+          <Todos />
+        </>
+      </main>
+    </GlobalContext.Provider>
   )
 }
 

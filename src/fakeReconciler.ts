@@ -6,7 +6,7 @@ let memorization = {
 }
 
 /**
- * Renderizar a árvore do React no DOM.
+ * Renderizar um componente do React no DOM.
  */
 export function render(reactElement: JSX.Element, rootDOMElement: HTMLElement) {
   memorization = {
@@ -18,7 +18,7 @@ export function render(reactElement: JSX.Element, rootDOMElement: HTMLElement) {
 }
 
 /**
- * Renderizar elementos do React em formato de texto.
+ * Renderizar componentes do React em formato de texto.
  */
 export function renderToString(reactElement: JSX.Element): string {
   const mountedTree = mountElement(reactElement)

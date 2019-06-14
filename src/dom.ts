@@ -1,9 +1,15 @@
+import { RefObject } from './hooks';
+
 /**
  * Criar um elemento JSX válido para ser entendido pelo algoritmo.
  */
 export function createElement(type: string, props: object, ...children): JSX.Element {
   if (!props) props = {};
-  return { type, props, children }
+  return {
+    type,
+    props,
+    children: props.children || children
+  }
 }
 
 /**
@@ -44,7 +50,7 @@ export function mountElement(element: JSX.Element): HTMLElement {
   return node
 }
 
-type PropValue = string | number | boolean | EventHandler
+type PropValue = string | number | boolean | EventHandler | RefObject
 type EventHandler = (event: Event) => void
 
 /**
@@ -54,6 +60,9 @@ function setProp(node: HTMLElement, propName: string, propValue: PropValue) {
   if (/^on/.test(propName) && typeof propValue === 'function') {
     const eventType = propName.substring(2).toLowerCase()
     node.addEventListener(eventType, propValue)
+  }
+  else if (propName === 'ref') {
+    (propValue as RefObject).updateRef(node)
   }
   else {
     node[propName] = propValue

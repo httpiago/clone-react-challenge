@@ -1,13 +1,17 @@
 import * as React from '../src/index'
+import { GlobalContext } from './App';
+import { AppState } from './reducer';
 
-type Props = {
-  number: number,
-}
-
-export default function Counter({ number }: Props) {
+export default function Counter(props) {
   return (
-    <div>
-      Counter: {number}
-    </div>
+    <GlobalContext.Consumer
+      children={({ state }: AppState) => {
+        return (
+          <div>
+            Counter: {state.todos.length}
+          </div>
+        )
+      }}
+    />
   )
 }

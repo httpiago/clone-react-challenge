@@ -1,26 +1,34 @@
 import * as React from '../src/index'
+import { GlobalContext } from './App';
+
+import Form from './Form';
 
 type Props = {
-  todos: Array<{ [index: string]: any }>
-  addLabel?: string,
-  handleAdd: () => void,
-  handleDelete: (id: number) => void,
   children?: JSX.Element
 }
 
-export default function Todos({ todos, handleAdd, handleDelete, addLabel }: Props) {
+export default function Todos(props: Props) {
+  const { state: { todos }, dispatch } = React.useContext(GlobalContext)
+
+  function handleDelete(payload: number) {
+    dispatch({ type: 'REMOVE_TODO', payload })
+  }
+
   return (
     <div>
       <ul>
         {todos.length !== 0 ? (
           todos.map(({ id, text }) => (
-            <li onClick={() => handleDelete(id)}>{text} (click to remove)</li>
+            <li onClick={handleDelete.bind(null, id)}>{text} (click to remove)</li>
           ))
         ) : (
           'Nenhum todo encontrado :('
         )}
       </ul>
-      <ion-button onClick={handleAdd}>{addLabel || 'Add todo'}</ion-button>
+
+      <Form
+        addLabel="Adicionar todo"
+      />
     </div>
   )
 }
