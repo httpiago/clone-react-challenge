@@ -50,19 +50,23 @@ export function mountElement(element: JSX.Element): HTMLElement {
   return node
 }
 
-type PropValue = string | number | boolean | EventHandler | RefObject
-type EventHandler = (event: Event) => void
+type PropName = string;
+type PropValue = string | number | boolean | EventHandler | RefObject;
+type EventHandler = (event: Event) => void;
 
 /**
  * Set property
  */
-function setProp(node: HTMLElement, propName: string, propValue: PropValue) {
+function setProp(node: HTMLElement, propName: PropName, propValue: PropValue) {
   if (/^on/.test(propName) && typeof propValue === 'function') {
     const eventType = propName.substring(2).toLowerCase()
     node.addEventListener(eventType, propValue)
   }
   else if (propName === 'ref') {
     (propValue as RefObject).updateRef(node)
+  }
+  else if (propName === 'dangerouslySetInnerHTML') {
+    node.innerHTML = String(propValue)
   }
   else {
     node[propName] = propValue
@@ -96,5 +100,5 @@ function renderChildren(node: HTMLElement, children: JSX.Element[]) {
 function mountComponent(Component: Function, props: object) {
   const domNode = Component(props)
 
-  return mountElement( domNode )
+  return mountElement(domNode)
 }

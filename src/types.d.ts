@@ -6,6 +6,8 @@ declare namespace JSX {
   /** Properties and children to apply to an element. */
   interface ElementProperties {
     className?: string;
+    dangerouslySetInnerHTML?: string;
+    ref?: object;
     [name: string]: any;
   }
 
