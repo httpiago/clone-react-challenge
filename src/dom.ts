@@ -74,9 +74,13 @@ function setProp(node: HTMLElement, propName: string, propValue: PropValue) {
  */
 function renderChildren(node: HTMLElement, children: JSX.Element[]) {
   children.forEach((child) => {
+    if (child === null || child === false) return;
+
     if (Array.isArray(child)) {
       // Renderizar uma lista
       child.forEach((child) => {
+        if (child === null || child === false) return;
+
         node.appendChild( mountElement(child) )
       })
     } else {
@@ -86,6 +90,9 @@ function renderChildren(node: HTMLElement, children: JSX.Element[]) {
   })
 }
 
+/**
+ * Montar um componente de função.
+ */
 function mountComponent(Component: Function, props: object) {
   const domNode = Component(props)
 
