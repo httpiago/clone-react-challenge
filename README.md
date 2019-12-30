@@ -37,6 +37,7 @@ yarn run start
 | Criar referência a um elemento.           | ️️️️✔️ | [Implementação](/src/hooks.ts#L69) |
 | Tratar erros durante a renderização.      | ️️️️✔️ | [Implementação](/src/fakeReconciler.ts#L39) |
 | .renderToString(...)                      | ✔️ | [Implementação](/src/fakeReconciler.ts#L23) |
+| Concurrent mode                           | ❌ | - |
 
 ## Inspirações
 
